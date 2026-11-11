@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Crop growing-guide side panel
+   Shared by crops.html and the three farm pages (kitchen-garden, smallholding,
+   working-farm). The panel itself is built by js/crop-panel.js.
+   ========================================================================== */
+
+.crop-panel {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  right: 0;
+  width: min(560px, 44vw);
+  height: 100dvh;
+  overflow-y: auto;
+  color: #203d2d;
+  background: #fffdf7;
+  box-shadow: -24px 0 70px rgb(17 39 26 / 24%);
+  animation: reveal-panel 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes reveal-panel {
+  from {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.panel-image {
+  position: relative;
+  height: 310px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.panel-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(15 39 25 / 88%), transparent 62%);
+  content: "";
+}
+
+.panel-image > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.panel-image > div {
+  position: absolute;
+  z-index: 1;
+  right: 38px;
+  bottom: 28px;
+  left: 38px;
+}
+
+.panel-image span,
+.panel-kicker,
+.season-facts span {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.panel-image h2 {
+  margin: 6px 0 2px;
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.panel-image p {
+  margin: 0;
+  color: rgb(255 255 255 / 76%);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.panel-close {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 50%;
+  color: #fff;
+  background: rgb(18 48 31 / 48%);
+  font-size: 26px;
+  line-height: 1;
+  backdrop-filter: blur(8px);
+}
+
+.panel-content {
+  padding: 8px 38px 44px;
+}
+
+.panel-content > section {
+  padding: 28px 0;
+  border-bottom: 1px solid #dfe2d7;
+}
+
+.panel-content > section:last-child {
+  border-bottom: 0;
+}
+
+.panel-kicker {
+  margin: 0 0 16px;
+  color: #947d55;
+}
+
+.panel-intro {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.crop-facts {
+  display: grid;
+  gap: 17px;
+  margin: 22px 0 0;
+}
+
+.crop-facts div {
+  display: grid;
+  grid-template-columns: 124px 1fr;
+  gap: 18px;
+}
+
+.crop-facts dt {
+  color: #203d2d;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.crop-facts dd {
+  margin: 0;
+  color: #687166;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.season-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.season-facts div {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+  background: #eff0e8;
+}
+
+.season-facts div:last-child {
+  grid-column: 1 / -1;
+  min-height: auto;
+  flex-direction: row;
+  align-items: center;
+}
+
+.season-facts span {
+  color: #7c837a;
+  letter-spacing: 1px;
+}
+
+.season-facts strong {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .crop-panel {
+    width: min(560px, 55vw);
+  }
+}
+
+@media (max-width: 800px) {
+  .crop-panel {
+    width: min(620px, 84vw);
+  }
+}
+
+@media (max-width: 560px) {
+  .crop-panel {
+    top: 8vh;
+    width: 100%;
+    height: 92dvh;
+    border-radius: 18px 18px 0 0;
+    animation-name: reveal-panel-mobile;
+  }
+
+  @keyframes reveal-panel-mobile {
+    from {
+      opacity: 0.5;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .panel-image {
+    height: 250px;
+  }
+
+  .panel-image > div,
+  .panel-content {
+    right: 24px;
+    left: 24px;
+  }
+
+  .panel-content {
+    padding: 8px 24px 36px;
+  }
+
+  .crop-facts div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}

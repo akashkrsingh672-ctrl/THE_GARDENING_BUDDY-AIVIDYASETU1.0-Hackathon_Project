@@ -1,0 +1,257 @@
+/* ==========================================================================
+   The Gardening Buddy - shared base styles
+   Used by every page: reset, page defaults, header/brand, shared typography.
+   Fonts (Inter + Lora) are loaded from Google Fonts in each page's <head>.
+   ========================================================================== */
+
+:root {
+  --font-sans: "Inter", Arial, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+}
+
+/* ---- Reset (equivalent to the Tailwind preflight the design was built on) ---- */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+optgroup,
+textarea {
+  font: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  border-radius: 0;
+  background-color: transparent;
+  opacity: 1;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+::placeholder {
+  opacity: 1;
+}
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none !important;
+}
+
+/* ---- Page defaults ---- */
+:root {
+  color: #203d2d;
+  background: #f6f3ea;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-synthesis: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f6f3ea;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #f6f3ea;
+}
+
+/* ---- Header + brand ---- */
+.nav {
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: clamp(24px, 5vw, 72px);
+  border-bottom: 1px solid #d8decf;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #264c36;
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #203d2d;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.wordmark span:first-child {
+  letter-spacing: 1.4px;
+}
+
+.wordmark span:last-child {
+  letter-spacing: 3.5px;
+}
+
+/* ---- Shared typography ---- */
+.eyebrow {
+  margin: 0;
+  color: #264c36;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.7px;
+}
+
+h1 {
+  margin: 0;
+  color: #203d2d;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(48px, 4.72vw, 68px);
+  line-height: 1.1;
+  letter-spacing: -2.7px;
+}
+
+.intro {
+  margin: 0;
+  color: #687166;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.gold-text {
+  color: #e8c873;
+}
+
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.back-home span {
+  font-size: 19px;
+  transition: transform 180ms ease;
+}
+
+.back-home:hover span {
+  transform: translateX(-4px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 800px) {
+  .nav {
+    height: 84px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    padding-inline: 20px;
+  }
+
+  .wordmark {
+    font-size: 11px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+}

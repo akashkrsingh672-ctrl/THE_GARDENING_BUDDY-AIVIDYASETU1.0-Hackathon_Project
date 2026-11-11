@@ -1,0 +1,919 @@
+/* ==========================================================================
+   Home page (index.html)
+   Hero, benefits strip, crop-care section, season section, footer,
+   "Let's start with your growing space" dialog and the login toast.
+   Loaded after css/base.css.
+   ========================================================================== */
+
+.section-wrap,
+.season {
+  padding-inline: clamp(24px, 5vw, 72px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Header actions ---- */
+.account-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.text-button {
+  border: 0;
+  padding: 8px 0;
+  color: #203d2d;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 180ms ease;
+}
+
+.text-button:hover {
+  color: #947d55;
+}
+
+.user-name {
+  max-width: 180px;
+  overflow: hidden;
+  color: #203d2d;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.action-button {
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: none;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.action-button:hover,
+.find-crop:hover {
+  transform: translateY(-2px);
+}
+
+.action-button.green {
+  color: white;
+  background: #264c36;
+}
+
+.action-button.green:hover {
+  background: #183c2a;
+}
+
+.action-button.gold {
+  color: #203d2d;
+  background: #e8c873;
+}
+
+.action-button.gold:hover {
+  background: #f1d889;
+}
+
+/* ---- Hero ---- */
+.hero {
+  padding-top: 48px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(460px, 580px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  padding-right: 20px;
+}
+
+.hero-copy > .intro,
+.recognition,
+.scroll-invite {
+  width: min(100%, 492px);
+}
+
+.recognition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 6px;
+}
+
+.find-crop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: #264c36;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.find-crop:hover {
+  background: #183c2a;
+}
+
+.recognition strong,
+.recognition p {
+  font-size: 14px;
+}
+
+.recognition strong {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.recognition p,
+.field-note p,
+.task-card p,
+.help-topic p,
+.journey-step p {
+  margin: 0;
+  color: #687166;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.recognition p {
+  line-height: 1.5;
+}
+
+/* Empty spacer link kept from the design (keeps the hero's vertical rhythm). */
+.scroll-invite {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.reassurance {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: #687166;
+  font-size: 13px;
+}
+
+.hero-image {
+  position: relative;
+  height: 576px;
+  overflow: hidden;
+  border-radius: 120px 12px 12px;
+}
+
+.hero-image > img,
+.care-photo > img,
+.journey-image > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.field-note {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: min(360px, calc(100% - 48px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #fffdf7;
+  box-shadow: 0 12px 40px rgb(19 43 32 / 13%);
+}
+
+.field-note > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  background: #e8eddf;
+}
+
+.field-note strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.field-note p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* ---- Benefits strip ---- */
+.benefits {
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  border-block: 1px solid #d8decf;
+}
+
+.benefits-label {
+  color: #687166;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* ---- Crop care section ---- */
+.care {
+  display: grid;
+  grid-template-columns: minmax(430px, 592px) minmax(0, 1fr);
+  gap: clamp(48px, 6.1vw, 88px);
+  align-items: center;
+  padding-block: 88px;
+}
+
+.care-visual {
+  min-width: 0;
+}
+
+.care-photo {
+  position: relative;
+  height: 568px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.task-card {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: min(352px, calc(100% - 48px));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fffdf7;
+  box-shadow: 0 12px 40px rgb(19 43 32 / 13%);
+}
+
+.task-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-heading strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.task-heading span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #264c36;
+  background: #e8eddf;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.suggested-task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 8px;
+  background: #e8eddf;
+}
+
+.suggested-task strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.suggested-task p {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  color: #687166;
+  font-size: 12px;
+}
+
+.caption span:last-child {
+  color: #947d55;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.care-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.care h2,
+.season h2,
+.dialog h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+.care h2 {
+  color: #203d2d;
+  font-size: clamp(40px, 3.48vw, 50px);
+  line-height: 1.14;
+  letter-spacing: -1.8px;
+}
+
+.help-topics {
+  width: 100%;
+}
+
+.help-topic {
+  display: flex;
+  gap: 18px;
+  padding-block: 20px;
+  border-bottom: 1px solid #d8decf;
+}
+
+.help-topic > img {
+  flex: none;
+}
+
+.help-topic h3 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.help-topic p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ---- Season section ---- */
+.season {
+  display: grid;
+  grid-template-columns: minmax(440px, 600px) minmax(0, 1fr);
+  gap: clamp(56px, 6.67vw, 96px);
+  align-items: center;
+  padding-block: 80px;
+  background: #183c2a;
+}
+
+.season-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.season h2 {
+  color: #f6f3ea;
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 4.03vw, 58px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.season .intro {
+  max-width: 485px;
+  color: #c4d0c1;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.reassurance.light {
+  color: #c4d0c1;
+}
+
+.journey-image {
+  position: relative;
+  height: 504px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.journey-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: min(504px, calc(100% - 48px));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 8px;
+  background: #f6f3ea;
+}
+
+.journey-card h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.journey-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.journey-step > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border: 1px solid #d8decf;
+  border-radius: 50%;
+  color: #264c36;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.journey-step strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.journey-step p {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* ---- Footer ---- */
+.footer {
+  padding-top: 48px;
+  padding-bottom: 28px;
+}
+
+.footer-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.footer-brand {
+  width: 460px;
+}
+
+.footer-brand .wordmark {
+  font-size: 13px;
+}
+
+.footer-brand > p {
+  margin: 18px 0 0;
+  color: #687166;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: clamp(40px, 5.55vw, 80px);
+}
+
+.footer-links > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer-links strong {
+  color: #687166;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #d8decf;
+  color: #687166;
+  font-size: 12px;
+}
+
+.legal p {
+  margin: 0;
+}
+
+.legal div {
+  display: flex;
+  gap: 28px;
+}
+
+/* ---- Start dialog ---- */
+.dialog-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(24 60 42 / 62%);
+  backdrop-filter: blur(8px);
+}
+
+.dialog {
+  position: relative;
+  width: min(100%, 560px);
+  padding: 44px;
+  border-radius: 16px;
+  background: #fffdf7;
+  box-shadow: 0 24px 80px rgb(19 43 32 / 24%);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d8decf;
+  border-radius: 50%;
+  color: #203d2d;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dialog h2 {
+  margin-top: 18px;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+}
+
+.dialog > p:not(.eyebrow) {
+  color: #687166;
+  line-height: 1.6;
+}
+
+.farm-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.farm-options button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border: 1px solid #d8decf;
+  border-radius: 8px;
+  color: #203d2d;
+  background: #f6f3ea;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.farm-options button:hover {
+  border-color: #264c36;
+}
+
+/* ---- "Login first" toast ---- */
+.login-toast {
+  position: fixed;
+  z-index: 60;
+  right: 28px;
+  bottom: 28px;
+  width: min(390px, calc(100% - 40px));
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  padding: 16px 18px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 12px;
+  color: #fff;
+  background: #203d2d;
+  box-shadow: 0 18px 55px rgb(17 39 26 / 28%);
+  animation: toast-in 220ms ease-out both;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+.login-toast-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8c873;
+}
+
+.login-toast-icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.login-toast strong {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.login-toast p {
+  margin: 4px 0 0;
+  color: #c4d0c1;
+  font-size: 11px;
+}
+
+.login-toast > i {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #e8c873;
+  transform-origin: left;
+  animation: login-countdown 5s linear forwards;
+}
+
+@keyframes login-countdown {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: minmax(400px, 0.9fr) 1.1fr;
+    gap: 32px;
+  }
+
+  .care {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+  }
+
+  .season {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+  }
+
+  .journey-card {
+    right: 20px;
+    left: 20px;
+    width: auto;
+  }
+
+  .footer-brand {
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .account-actions .text-button {
+    display: none;
+  }
+
+  .hero-grid,
+  .care,
+  .season {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding-right: 0;
+  }
+
+  .hero-image {
+    height: min(70vw, 560px);
+    min-height: 440px;
+  }
+
+  .benefits {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding-block: 28px;
+  }
+
+  .benefits-label {
+    grid-column: 1 / -1;
+  }
+
+  .care {
+    padding-block: 64px;
+  }
+
+  .care-visual {
+    order: 2;
+  }
+
+  .season {
+    padding-block: 64px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 560px) {
+  .section-wrap,
+  .season {
+    padding-inline: 20px;
+  }
+
+  .account-actions .action-button {
+    height: 46px;
+    padding: 0 14px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .account-actions .action-button img {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .hero-image {
+    min-height: 420px;
+    border-radius: 72px 12px 12px;
+  }
+
+  .field-note {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    width: auto;
+    padding: 14px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-label {
+    grid-column: auto;
+  }
+
+  .care-photo {
+    height: 520px;
+  }
+
+  .task-card {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    width: auto;
+    padding: 20px;
+  }
+
+  .caption {
+    flex-direction: column;
+  }
+
+  .care h2,
+  .season h2 {
+    font-size: 40px;
+  }
+
+  .journey-image {
+    height: 560px;
+  }
+
+  .journey-card {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    padding: 20px;
+  }
+
+  .journey-card h3 {
+    font-size: 21px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .legal {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dialog {
+    padding: 38px 24px 24px;
+  }
+
+  .dialog h2 {
+    font-size: 32px;
+  }
+
+  .user-name {
+    max-width: 90px;
+    font-size: 12px;
+  }
+
+  .login-toast {
+    right: 20px;
+    bottom: 20px;
+  }
+}

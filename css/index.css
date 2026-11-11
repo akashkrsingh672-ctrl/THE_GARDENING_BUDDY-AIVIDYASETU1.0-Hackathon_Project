@@ -129,6 +129,23 @@
   padding-top: 6px;
 }
 
+.recognition-copy { width: 100%; }
+.recognition-preview { width: min(100%, 300px); max-height: 230px; border: 1px solid #d8decf; border-radius: 10px; object-fit: cover; }
+.identify-crop { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; margin-top: 12px; padding: 0 16px; border-radius: 7px; color: #203d2d; background: #e8c873; font-size: 13px; font-weight: 600; }
+.identify-crop:hover { background: #f1d889; }
+.identify-crop:disabled { cursor: wait; opacity: .65; }
+.recognition-results { display: grid; gap: 8px; width: 100%; margin-top: 12px; }
+.recognition-match { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 13px; border: 1px solid #d8decf; border-radius: 8px; background: #fffdf7; }
+.recognition-match-main { min-width: 0; }
+.recognition-match-main strong { margin: 0; }
+.recognition-match-main span { display: block; margin-top: 3px; color: #687166; font-size: 12px; }
+.recognition-confidence { flex: none; padding: 6px 8px; border-radius: 99px; color: #264c36; background: #e3ede2; font-size: 10px; font-weight: 600; text-transform: capitalize; }
+.confidence-low { color: #755b18; background: #f8edc8; }
+.recognition-match-main .recognition-scientific-name { font-style: italic; }
+.recognition-guide { flex: none; padding: 8px 10px; border: 1px solid #b8c1b3; border-radius: 6px; color: #264c36; background: transparent; font-size: 11px; font-weight: 600; }
+.recognition-guide:hover { background: #e3ede2; }
+.recognition-disclaimer { color: #7d857b; font-size: 11px !important; line-height: 1.5; }
+
 .find-crop {
   display: flex;
   align-items: center;

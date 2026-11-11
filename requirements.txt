@@ -1,0 +1,5 @@
+# Python package requirements: none.
+#
+# The AI plant identifier's API proxy is implemented in server.js and requires
+# Node.js 18 or newer. It uses Node's built-in modules, so there are no npm
+# packages to install. Configure OPENAI_API_KEY in the server environment.

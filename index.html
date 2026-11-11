@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/crop-panel.css" />
   </head>
   <body>
     <div id="top" class="site-shell">
@@ -52,19 +53,19 @@
                   id="cropPhoto"
                   class="visually-hidden"
                   type="file"
-                  accept="image/*"
+                  accept="image/jpeg,image/png,image/webp"
                   aria-label="Upload a photo of a plant"
                 />
                 <button class="find-crop" id="findCropButton" type="button">
                   <img src="assets/icons/camera.svg" alt="" />
                   FIND THE CROP
                 </button>
-                <div>
+                <img class="recognition-preview" id="recognitionPreview" alt="Selected plant photo preview" hidden />
+                <div class="recognition-copy">
                   <strong id="recognitionTitle">Recognize a plant in seconds</strong>
-                  <p id="recognitionText">
-                    Upload a photo of the plant and Gardening Buddy will help you identify it, so
-                    you can choose the right care and keep your farm moving.
-                  </p>
+                  <p id="recognitionText">Choose a plant photo to identify it. Submitted photos are sent to OpenAI for analysis.</p>
+                  <button class="identify-crop" id="identifyCropButton" type="button" hidden>Identify this plant</button>
+                  <div class="recognition-results" id="recognitionResults" aria-live="polite"></div>
                 </div>
               </div>
               <a class="scroll-invite" href="#crop-care" aria-hidden="true" tabindex="-1"></a>
@@ -272,6 +273,7 @@
 
     <script src="js/common.js"></script>
     <script src="js/crop-data.js"></script>
+    <script src="js/crop-panel.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

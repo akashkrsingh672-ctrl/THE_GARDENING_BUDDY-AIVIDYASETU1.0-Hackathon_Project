@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Gardening Buddy</title>
+    <meta
+      name="description"
+      content="Practical crop advice and simple planning, so you can make confident decisions from seed to harvest."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div id="top" class="site-shell">
+      <header class="nav">
+        <a class="brand" href="index.html" aria-label="The Gardening Buddy home">
+          <span class="brand-mark"><img src="assets/icons/logo.svg" alt="" /></span>
+          <span class="wordmark"><span>THE GARDENING</span><span>BUDDY</span></span>
+        </a>
+        <div class="account-actions">
+          <!-- js/index.js swaps "Sign in" for the user's name when signed in -->
+          <button class="text-button" id="signInButton" type="button">Sign in</button>
+          <span class="user-name" id="userName" hidden></span>
+          <button class="action-button green" id="getStartedButton" type="button">
+            <span>Get started</span>
+            <img src="assets/icons/arrow-up-right-white.svg" alt="" />
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- Hero -->
+        <section class="hero section-wrap" id="how-it-works">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">ROOTED IN YOUR EVERYDAY</p>
+              <h1>A little guidance.<br />A lot of growth.</h1>
+              <p class="intro">
+                Meet your farm’s everyday companion. Practical crop advice and simple planning, so
+                you can make confident decisions from seed to harvest.
+              </p>
+              <div class="recognition">
+                <input
+                  id="cropPhoto"
+                  class="visually-hidden"
+                  type="file"
+                  accept="image/*"
+                  aria-label="Upload a photo of a plant"
+                />
+                <button class="find-crop" id="findCropButton" type="button">
+                  <img src="assets/icons/camera.svg" alt="" />
+                  FIND THE CROP
+                </button>
+                <div>
+                  <strong id="recognitionTitle">Recognize a plant in seconds</strong>
+                  <p id="recognitionText">
+                    Upload a photo of the plant and Gardening Buddy will help you identify it, so
+                    you can choose the right care and keep your farm moving.
+                  </p>
+                </div>
+              </div>
+              <a class="scroll-invite" href="#crop-care" aria-hidden="true" tabindex="-1"></a>
+              <p class="reassurance">
+                <img src="assets/icons/check-green.svg" alt="" />
+                Your land. Your crops. A helping hand.
+              </p>
+            </div>
+
+            <div class="hero-image">
+              <img src="assets/images/hero-farmer.jpg" alt="Farmer tending rows of leafy crops" />
+              <div class="field-note">
+                <span><img src="assets/icons/sprout-note.svg" alt="" /></span>
+                <div>
+                  <strong>Good farming starts with knowing.</strong>
+                  <p>A little support for every growing day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefits">
+            <p class="benefits-label">MADE FOR LIFE IN THE FIELD</p>
+            <div class="benefit">
+              <img src="assets/icons/sprout.svg" alt="" />
+              <span>Advice for your crops</span>
+            </div>
+            <div class="benefit">
+              <img src="assets/icons/calendar.svg" alt="" />
+              <span>Plans for your season</span>
+            </div>
+            <div class="benefit">
+              <img src="assets/icons/sun.svg" alt="" />
+              <span>Clarity for your next step</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Crop care -->
+        <section class="care section-wrap" id="crop-care">
+          <div class="care-visual">
+            <div class="care-photo">
+              <img src="assets/images/care-tomatoes.jpg" alt="Hands checking tomatoes on the vine" />
+              <div class="task-card">
+                <div class="task-heading">
+                  <strong>A good day to grow</strong>
+                  <span>YOUR FARM</span>
+                </div>
+                <div class="suggested-task">
+                  <span class="task-icon"><img src="assets/icons/droplets-small.svg" alt="" /></span>
+                  <div>
+                    <strong>Check soil moisture</strong>
+                    <p>Tomatoes · Before watering</p>
+                  </div>
+                </div>
+                <div class="suggested-task">
+                  <span class="task-icon"><img src="assets/icons/sprout-task.svg" alt="" /></span>
+                  <div>
+                    <strong>Prepare the next sowing</strong>
+                    <p>Leafy greens · This week</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption">
+              <span>Less guesswork. More time with your crops.</span>
+              <span>IN THE FIELD</span>
+            </div>
+          </div>
+
+          <div class="care-copy">
+            <p class="eyebrow">PRACTICAL HELP. ALL SEASON LONG.</p>
+            <h2>Know what your<br />crops need. And when.</h2>
+            <div class="help-topics">
+              <article class="help-topic">
+                <img src="assets/icons/leaf.svg" alt="" />
+                <div>
+                  <h3>Understand your crop</h3>
+                  <p>
+                    Spot early signs of stress and find practical care steps for the crops you grow.
+                  </p>
+                </div>
+              </article>
+              <article class="help-topic">
+                <img src="assets/icons/droplets.svg" alt="" />
+                <div>
+                  <h3>Know More about it</h3>
+                  <p>
+                    Keep watering, feeding and field checks in one clear, manageable task list.
+                  </p>
+                </div>
+              </article>
+              <article class="help-topic">
+                <img src="assets/icons/calendar-large.svg" alt="" />
+                <div>
+                  <h3>Plan a season ahead</h3>
+                  <p>Map sowing windows, crop rotations and harvests around your farm.</p>
+                </div>
+              </article>
+            </div>
+            <button class="action-button green" id="exploreCropsButton" type="button">
+              <span>Explore Crops</span>
+              <img src="assets/icons/arrow-up-right-white.svg" alt="" />
+            </button>
+          </div>
+        </section>
+
+        <!-- Next season -->
+        <section class="season" id="farm-planning">
+          <div class="season-copy">
+            <p class="eyebrow gold-text">YOUR NEXT SEASON STARTS HERE</p>
+            <h2>Let’s grow a better<br />season. Together.</h2>
+            <p class="intro">
+              Every farm is different. Tell us a little about yours, and turn everyday questions
+              into a clear next step.
+            </p>
+            <button class="action-button gold" id="startFarmButton" type="button">
+              <span>Start with your farm</span>
+              <img src="assets/icons/arrow-up-right-dark.svg" alt="" />
+            </button>
+            <p class="reassurance light">
+              <img src="assets/icons/check-gold.svg" alt="" />
+              Simple to set up. Built around what you grow.
+            </p>
+          </div>
+          <div class="journey-image">
+            <img
+              src="assets/images/season-fields.jpg"
+              alt="A patchwork of farm fields across a sunny valley"
+            />
+            <div class="journey-card">
+              <h3>Your farm. Your starting point.</h3>
+              <div class="journey-step">
+                <span>01</span>
+                <div>
+                  <strong>Tell us about your land</strong>
+                  <p>Your location and growing conditions</p>
+                </div>
+              </div>
+              <div class="journey-step">
+                <span>02</span>
+                <div>
+                  <strong>Add the crops you grow</strong>
+                  <p>From a single plot to a full rotation</p>
+                </div>
+              </div>
+              <div class="journey-step">
+                <span>03</span>
+                <div>
+                  <strong>Find your next best step</strong>
+                  <p>Crop care and a plan for the days ahead</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer section-wrap" id="field-notes">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a class="brand" href="index.html" aria-label="The Gardening Buddy home">
+              <span class="brand-mark"><img src="assets/icons/logo.svg" alt="" /></span>
+              <span class="wordmark"><span>THE GARDENING</span><span>BUDDY</span></span>
+            </a>
+            <p>A helping hand for the hands that grow our food.</p>
+          </div>
+          <div class="footer-links">
+            <div><strong>YOUR FARM</strong></div>
+            <div><strong>THE BUDDY</strong></div>
+            <div><strong>HERE TO HELP</strong></div>
+          </div>
+        </div>
+        <div class="legal">
+          <p>© 2026 The Gardening Buddy. Rooting for you, every season.</p>
+          <div></div>
+        </div>
+      </footer>
+
+      <!-- "Let's start with your growing space" dialog (opened by js/index.js) -->
+      <div class="dialog-backdrop" id="startDialog" role="presentation" hidden>
+        <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="start-title">
+          <button class="dialog-close" id="startDialogClose" type="button" aria-label="Close dialog">
+            ×
+          </button>
+          <p class="eyebrow">YOUR FARM, YOUR PLAN</p>
+          <h2 id="start-title">Let’s start with your growing space.</h2>
+          <p>Choose what best describes your farm and we’ll shape the next steps around you.</p>
+          <div class="farm-options" id="farmOptions">
+            <!-- one button per farm type is added by js/index.js from js/crop-data.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- "Login first!" toast (shown by js/index.js when signed out) -->
+      <div class="login-toast" id="loginToast" role="status" aria-live="polite" hidden>
+        <span class="login-toast-icon"><img src="assets/icons/sprout.svg" alt="" /></span>
+        <div>
+          <strong>Login first!</strong>
+          <p>Taking you to your growing space in 5 seconds.</p>
+        </div>
+        <i aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/crop-data.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

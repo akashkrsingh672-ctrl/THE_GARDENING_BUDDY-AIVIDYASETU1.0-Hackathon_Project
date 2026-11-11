@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in · The Gardening Buddy</title>
+    <meta
+      name="description"
+      content="Sign in to explore crop guides and build a plan around the way you grow."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <header class="login-nav">
+        <a class="brand" href="index.html" aria-label="The Gardening Buddy home">
+          <span class="brand-mark"><img src="assets/icons/logo.svg" alt="" /></span>
+          <span class="wordmark"><span>THE GARDENING</span><span>BUDDY</span></span>
+        </a>
+        <a href="index.html" class="back-home"><span aria-hidden="true">←</span> Back to home</a>
+      </header>
+
+      <main class="login-main">
+        <div class="login-image" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/uploads/1411901100260f56b39b9/ab70b250?auto=format&amp;fit=crop&amp;w=1500&amp;q=88"
+            alt=""
+          />
+          <div class="login-image-note">
+            <span><img src="assets/icons/sprout.svg" alt="" /></span>
+            <p>
+              <strong>Good growing starts here.</strong>
+              Your plans, crops, and field notes in one calm place.
+            </p>
+          </div>
+        </div>
+
+        <section class="login-card" aria-labelledby="login-title">
+          <p class="eyebrow">WELCOME TO YOUR GROWING SPACE</p>
+          <h1 id="login-title">Let’s get you rooted.</h1>
+          <p class="login-intro">
+            Sign in to explore crop guides and build a plan around the way you grow.
+          </p>
+
+          <form id="loginForm">
+            <label>
+              <span>Name</span>
+              <input
+                id="loginName"
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder="Your name"
+                required
+              />
+            </label>
+            <label>
+              <span>Email ID</span>
+              <input
+                id="loginEmail"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              <span>Password</span>
+              <input
+                id="loginPassword"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="At least 6 characters"
+                minlength="6"
+                required
+              />
+            </label>
+
+            <p class="login-error" id="loginError" role="alert" hidden></p>
+
+            <button type="submit" class="login-submit">
+              <span>Continue to Gardening Buddy</span>
+              <img src="assets/icons/arrow-up-right-white.svg" alt="" />
+            </button>
+          </form>
+
+          <p class="login-integration-note">
+            Account verification and secure data storage can be connected here when your
+            authentication database is ready.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>
